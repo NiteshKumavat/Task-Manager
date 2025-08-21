@@ -21,7 +21,7 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ id: user.user_id }, JWT_SECRET, { expiresIn: "1h" });
     res.json({ token });
   } catch (error) {
     console.error("Login error:", error);
@@ -41,7 +41,7 @@ export const register = async (req, res) => {
       [name, email, hashedPassword]
     );
 
-    const token = jwt.sign({ id: newUser.rows[0].id }, JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ id: newUser.rows[0].user_id }, JWT_SECRET, { expiresIn: "1h" });
     res.status(201).json({ token });
   } catch (error) {
     console.error("Registration error:", error);
