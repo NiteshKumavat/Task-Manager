@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.task-planner{
+    max-width: 100%;
+    background-color: #8a7f7f;
+    color: whitesmoke;
+}
+
+.title-profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #736c6c;
+}
+
+.title-profile h1{
+    font-size: 3rem;
+    font-weight: 800;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    margin: 12px;
+}
+
+img{
+    border: 2px solid blue;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 12px;
+}
+
+.profile p{
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.project-details{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+h2{
+    margin: 12px 10px;
+}
+

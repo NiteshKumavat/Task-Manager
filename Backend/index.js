@@ -1,9 +1,15 @@
-import express from "express";
-import db from "./db";
-import { login, register, logout, getCurrentUser, updateCurrentUser, deleteCurrentUser } from "./controllers/user.controller";
-import { createTask, getTasks, getTaskById, updateTask, deleteTask } from "./controllers/task.controller";
+import dotenv from "dotenv";
 
-const JWT_SECRET = "your_secret_key"
+dotenv.config({
+  path: "./.env",
+});
+import express from "express";
+import db from "./db.js"; 
+import { login, register, logout, getCurrentUser, updateCurrentUser, deleteCurrentUser } from "./controllers/user.controller.js";
+import { createTask, getTasks, getTaskById, updateTask, deleteTask } from "./controllers/task.controller.js";
+import { authenticateToken } from "./middleware/auth.middleware.js"; 
+
+const JWT_SECRET = process.env.JWT_SECRET
 
 db.connect()
   .then(() => console.log("✅ Connected to PostgreSQL"))
@@ -23,11 +29,11 @@ app.put("/users/me", updateCurrentUser)
 app.delete("/users/me", deleteCurrentUser)
 
 
-app.post("/tasks", createTask)
-app.get("/tasks", getTasks)
-app.get("/tasks/:id", getTaskById)
-app.put("/tasks/:id", updateTask)
-app.delete("/tasks/:id", deleteTask)
+app.post("/tasks", authenticateToken, createTask)
+app.get("/tasks", authenticateToken, getTasks)
+app.get("/tasks/:id", authenticateToken, getTaskById)
+app.put("/tasks/:id", authenticateToken, updateTask)
+app.delete("/tasks/:id", authenticateToken, deleteTask)
 
 
 

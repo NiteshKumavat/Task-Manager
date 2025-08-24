@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import db from "../db.js";
 import bcrypt from "bcryptjs";
 
-const JWT_SECRET = process.env.JWT_SECRET || "supersecret"; // use env in real app
+
 
 export const login = async (req, res) => {
   const { email, password } = req.body;
@@ -31,6 +31,7 @@ export const login = async (req, res) => {
 
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(name, email, password);
 
   try {
 

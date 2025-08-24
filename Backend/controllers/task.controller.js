@@ -1,6 +1,4 @@
-import jwt from "jsonwebtoken";
 import db from "../db.js";
-import bcrypt from "bcryptjs";
 
 export const createTask = async (req, res) => {
   const { title, description, priority, start_date, end_date, progress } = req.body;
@@ -67,7 +65,7 @@ export const updateTask = async (req, res) => {
   }
 };
 
-const deleteTask = async (req, res) => {
+export const deleteTask = async (req, res) => {
   const taskId = req.params.id;
   const userId = req.user.id;
 

@@ -1,0 +1,115 @@
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    padding: 15px;
+    color: #f0f0f0;
+}
+
+.timeline-container {
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: 120px repeat(5, 1fr);
+    min-width: 600px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #2a2a2a;
+}
+
+.header-cell,
+.day-cell {
+    background: #111;
+    color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    border-right: 1px solid #333;
+}
+
+.row {
+    display: contents;
+}
+
+.project-cell {
+    padding: 10px;
+    background: #2a2a2a;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.task-cell {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    position: relative;
+    background: #252525;
+}
+
+.task {
+    background: #3498db;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.task-0 { background: #3498db; }
+.task-1 { background: #2ecc71; }
+.task-2 { background: #e74c3c; }
+.task-3 { background: #f39c12; }
+.task-4 { background: #9b59b6; }
+
+.milestone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.empty-cell {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    background: #252525;
+}
+
+.divider {
+    grid-column: 1 / -1;
+    height: 2px;
+    background: #333;
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        grid-template-columns: 100px repeat(5, 1fr);
+        min-width: 500px;
+    }
+
+    .header-cell, .day-cell, .project-cell, .task-cell {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+

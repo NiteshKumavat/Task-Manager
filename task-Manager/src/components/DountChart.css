@@ -1,0 +1,47 @@
+/* DountChart.css - Dark Mode */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 575px;
+  padding: 15px;
+  background: #1e1e2f; 
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  width: fit-content;
+  margin: 20px auto;
+  color: #e0e0e0;
+}
+
+.chart-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #f5f5f5; /* light text */
+}
+
+/* Legend overrides */
+.recharts-legend-wrapper {
+  margin-top: 12px !important;
+}
+
+.recharts-default-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cfcfcf; /* lighter legend text */
+}
+
+
+.recharts-default-tooltip {
+  background: #e4e4e9 !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 8px 12px !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
