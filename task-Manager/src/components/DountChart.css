@@ -1,10 +1,9 @@
-/* DountChart.css - Dark Mode */
 .chart-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 575px;
+  height: auto;
   padding: 15px;
   background: #1e1e2f; 
   border-radius: 20px;
@@ -15,23 +14,22 @@
 }
 
 .chart-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #f5f5f5; /* light text */
+  font-size: 2.1rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+  color: #f5f5f5; 
 }
 
-/* Legend overrides */
 .recharts-legend-wrapper {
-  margin-top: 12px !important;
+  margin-top: 18px !important;
 }
 
 .recharts-default-legend {
   display: flex;
   justify-content: center;
   gap: 20px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 700;
   color: #cfcfcf; /* lighter legend text */
 }
 
@@ -43,5 +41,62 @@
   padding: 8px 12px !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.select-task #task-select-label{
+  font-size: 1.3rem;
+}
+
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #1e1e1e;
+  color: #f1f1f1;
+  font-size: 14px;
+  font-weight: 500;
+  appearance: none;       /* removes default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s;
+}
+
+/* Hover & focus */
+select:hover {
+  background: #252525;
+  border-color: #666;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4f6ef7;
+  box-shadow: 0 0 6px rgba(79, 110, 247, 0.6);
+}
+
+/* Custom dropdown arrow */
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #aaa;
+  pointer-events: none; /* don't block clicks */
+}
+
+/* Options inside dropdown */
+select option {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  padding: 10px;
+}
+
+@media(max-width : 870px){
+  .chart-container {
+    width: 500px;
+  }
 }
 

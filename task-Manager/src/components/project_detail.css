@@ -1,0 +1,63 @@
+#project-detail {
+  
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #1e1e2f; /* dark background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  color: #eaeaea;
+}
+
+#project-detail table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#project-detail th,
+#project-detail td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+}
+
+#project-detail thead {
+  background: #292945;
+  color: #f5f5f5;
+}
+
+#project-detail tbody tr:nth-child(even) {
+  background-color: #252542;
+}
+
+#project-detail tbody tr:hover {
+  background-color: #33335c;
+  transition: 0.3s;
+}
+
+
+#project-detail th {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+#project-detail td {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+
+.status-completed {
+  color: #4caf50; 
+  font-weight: bold;
+}
+
+.status-progress {
+  color: #ff9800; 
+  font-weight: bold;
+}
+
+.status-pending {
+  color: #f44336; 
+  font-weight: bold;
+}

@@ -2,6 +2,8 @@ import React from 'react'
 import './dashBoard.css'
 import Timeline from './Timeline'
 import DonutChart from './Donutchart'
+import ProjectDetail from './project_details'
+import Calendar from './Calendar'
 
 function DashBoard() {
   return (
@@ -25,22 +27,12 @@ function DashBoard() {
             <div className="project-info">
                 <h2>Project Details</h2>
                 <div className="task-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Project Name</th>
-                                <th>Status</th>
-                                <th>Progress</th>
-                                <th>Price</th>
-                                <th>Views</th>
-                                <th>Growth</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <ProjectDetail />
                 </div>
+            </div>
+            <div className="project-calendar">
+                <h2>Calendar</h2>
+                <Calendar />
             </div>
         </div>
     </div>

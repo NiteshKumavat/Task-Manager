@@ -1,56 +1,107 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-
-.task-planner{
+.task-planner {
     max-width: 100%;
-    background-color: #8a7f7f;
-    color: whitesmoke;
+    min-height: 100vh;
+    background-color: #121212; /* dark bg */
+    color: #e0e0e0; /* light text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.title-profile{
+/* Header Bar */
+.title-profile {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #736c6c;
+    background-color: #1f1f1f;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-.title-profile h1{
-    font-size: 3rem;
+.title-profile h1 {
+    font-size: 2.5rem;
     font-weight: 800;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
+    color: #4a90e2; /* accent blue */
 }
 
-.profile{
+.profile {
     display: flex;
     align-items: center;
     margin: 12px;
 }
 
-img{
-    border: 2px solid blue;
-    height: 30px;
-    width: 30px;
+img {
+    border: 2px solid #4a90e2;
+    height: 36px;
+    width: 36px;
     border-radius: 50%;
-    background-color: grey;
+    background-color: #333;
     margin: 12px;
 }
 
-.profile p{
-    font-size: 1.3rem;
+.profile p {
+    font-size: 1.2rem;
     font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    color: #ddd;
 }
 
-.project-details{
+.project-details {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 2fr 1fr; /* 2 equal columns */
+    grid-template-rows: auto auto; /* 2 rows */
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
 }
 
-h2{
+
+.task-timeline,
+.project-chart,
+.project-info,
+.project-calendar {
+    background: #1e1e2f;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    transition: all 0.3s ease;
+}
+
+.project-info,
+.project-calendar {
+    grid-column: auto;
+}
+
+.task-timeline:hover,
+.project-chart:hover,
+.project-info:hover,
+.project-calendar:hover {
+    background: #292945;
+}
+
+.project-calendar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.project-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+h2 {
     margin: 12px 10px;
+    color: #f5f5f5;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
 }
 
+
+@media (max-width: 1170px) {
+    .project-details {
+        grid-template-columns: 1fr; 
+    }
+}
